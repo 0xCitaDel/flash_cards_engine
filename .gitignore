@@ -85,6 +85,10 @@ __pycache__/
 local_settings.py
 migrations/
 
+
+### JavaScript ###
+node_modules/
+
 notice.txt
 
 .env

@@ -14,7 +14,7 @@ class Expressions(models.Model):
     )
     reference_description = models.ForeignKey(
         verbose_name='Info about card',
-        to='DescriptionOfExpressions',
+        to='Themes',
         on_delete=models.PROTECT
     )
 
@@ -27,7 +27,7 @@ class Expressions(models.Model):
         return f'{self.en_expression}'
 
 
-class DescriptionOfExpressions(models.Model):
+class Themes(models.Model):
 
     tense = models.ForeignKey(
         verbose_name='Tense name',
@@ -51,12 +51,12 @@ class DescriptionOfExpressions(models.Model):
     )
 
     class Meta:
-        db_table = 'expressions_description'
-        verbose_name = 'Description of expression'
-        verbose_name_plural = 'Description of expressions'
+        db_table = 'expressions_theme'
+        verbose_name = 'Theme'
+        verbose_name_plural = 'Themes'
 
     def __str__(self):
-        return f'{self.lesson_number} - {self.title}'
+        return f'{self.playlist_color} #{self.lesson_number}'
 
 
 class TenseName(models.Model):
