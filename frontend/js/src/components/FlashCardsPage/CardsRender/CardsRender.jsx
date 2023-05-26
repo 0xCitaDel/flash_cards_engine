@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getApiResource  } from '@utils/network'
-import { CARDS_ORANGE } from '@constants/api'
-import Card from '@components/CardsPage/Cards'
+import { API_LESSON } from '@constants/api'
+import CardsLogic from './CardsLogic'
 
 
 const CardsPage = () => {
@@ -22,12 +22,12 @@ const CardsPage = () => {
   }
 
   useEffect(() => {
-    getResource(CARDS_ORANGE)
+    getResource(API_LESSON)
   }, [])
   
   return (
     <>
-      { cards && <Card cards={cards}/> }
+      { cards && <CardsLogic  cards={cards}/> }
     </> 
   )
 }

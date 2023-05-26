@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import style from './Card.module.css'
+import React, { useState } from 'react'
+import style from './CardsLogic.module.css'
 import FlippableCard from '../FlippableCard'
 
 const Card = ({cards}) => {
