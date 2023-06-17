@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
 from .serializers import (ExpressionsSerializer, LessonsSerializer,
                           PlaylistsSerializer)
@@ -10,6 +11,7 @@ class ExpressionsListView(generics.ListCreateAPIView):
 
     serializer_class = ExpressionsSerializer
     queryset = Expressions.objects.all()
+    permission_classes = (IsAuthenticated, )
 
     def get_queryset(self):
         color = self.kwargs['color']

@@ -69,7 +69,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return self.username or self.email.split('@')[0]
 
 
-class UserPfofile(models.Model):
+class UserProfile(models.Model):
 
     user = models.OneToOneField(
         CustomUser, related_name='user_profile', primary_key=True, on_delete=models.CASCADE
